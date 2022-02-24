@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
  
+<title>President</title>
 <body>
 
 <h2>President guess by Martin Sanchez</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="form1_age">Enter the secret president name</label>
+    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="George Washington"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
+    <label for="form1_nick">Guess the president</label>
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">Results</p>
 
 <script> 
 
-function resolveForm (){
+function checkGuess(){
+
+    var correct = 0;
+    var wrong = 0;
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
+    nick = document.getElementById("form1_age").value
+    age = document.getElementById("form1_nick").value
     confirmed = confirm("Are these the values? "+age+" and "+nick)
     
     out = document.getElementById("result")
     if(confirmed){
-        out.innerHTML = "Values were confirmed"
+        out.correct = "“You got it right"
     } else {
-        out.innerHTML = "Values were not confirmed"
+        out.wrong = "Wrong President"
     }
 }
 </script>
