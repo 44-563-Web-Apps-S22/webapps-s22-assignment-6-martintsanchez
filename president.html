@@ -7,17 +7,17 @@
 <h2>President guess by Martin Sanchez</h2>
 
 <form>
-    <label for="form1_age">Enter the secret president name</label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="George Washington"> <br>
+    <label for="form1_secret">Enter the secret president name</label>
+    <input type ="password" id="form1_secret" name="form1_secret" min=10 max=50 step=2 value="George Washington"> <br>
 
-    <label for="form1_nick">Guess the president</label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="form1_guess">Guess the president</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
 
     <input type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
 
-<p id="result">Results</p>
+<p id="result">And the result is...</p>
 
 <script> 
 
@@ -26,15 +26,17 @@ function checkGuess(){
     var correct = 0;
     var wrong = 0;
     console.log("Getting form values")
-    nick = document.getElementById("form1_age").value
-    age = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    secret = document.getElementById("form1_secret").value
+    guess = document.getElementById("form1_guess").value
+    // confirmed = confirm("Are these the values? "+age+" and "+nick)
     
     out = document.getElementById("result")
-    if(confirmed){
-        out.correct = "“You got it right"
+    if(secret == guess){
+        out.innerHTML = "You got it right"
+        correct += 1;
     } else {
-        out.wrong = "Wrong President"
+        out.innerHTML = "Wrong President"
+        wrong += 1;
     }
 }
 </script>
