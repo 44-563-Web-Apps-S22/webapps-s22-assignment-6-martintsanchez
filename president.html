@@ -21,22 +21,24 @@
 
 <script> 
 
-function checkGuess(){
+var correct = 0;
+var wrong = 0;
 
-    var correct = 0;
-    var wrong = 0;
+function checkGuess(){
+   
     console.log("Getting form values")
     secret = document.getElementById("form1_secret").value
     guess = document.getElementById("form1_guess").value
-    // confirmed = confirm("Are these the values? "+age+" and "+nick)
+    //confirmed = confirm("Are these the values? "+age+" and "+nick)
     
     out = document.getElementById("result")
     if(secret == guess){
-        out.innerHTML = "You got it right"
         correct += 1;
+        out.innerHTML = "You got it right. Total correct answers: " + correct
+        
     } else {
-        out.innerHTML = "Wrong President"
         wrong += 1;
+        out.innerHTML = "Wrong President. Total wrong answers: " + wrong
     }
 }
 </script>
