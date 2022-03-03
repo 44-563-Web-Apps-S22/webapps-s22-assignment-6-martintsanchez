@@ -46,7 +46,7 @@ function checkGuess(){
 
 <div class="container">
 
-    <img src="https://www.allaboutbirds.org/guide/assets/photo/162823881-480px.jpg" 
+    <img id="showImage" src="https://www.allaboutbirds.org/guide/assets/photo/162823881-480px.jpg" 
     class="img-fluid" height="100" width="100"
     alt="Scaup Bird">
 </div>
@@ -60,16 +60,16 @@ function checkGuess(){
 
             switch (useImage) {
                 case 1: 
-                document.getElementById("showImage").src = "https://www.allaboutbirds.org/guide/assets/photo/162823881-480px.jpg";
                 useImage = 2;
+                document.getElementById("showImage").src = "https://www.allaboutbirds.org/guide/assets/photo/162823881-480px.jpg";
                     break;
                 case 2:
                 document.getElementById("showImage").src = "https://i0.wp.com/wilderness-society.org/wp-content/uploads/2018/12/Nandu-%C2%A9-Quartl-22003-2.jpg";
                 useImage = 3;
                     break;
                 case 3:
-                document.getElementById("showImage").src = "https://upload.wikimedia.org/wikipedia/commons/7/75/Microcarbo_melanoleucos_Austins_Ferry_3.jpg";
                 useImage = 1;
+                document.getElementById("showImage").src = "https://upload.wikimedia.org/wikipedia/commons/7/75/Microcarbo_melanoleucos_Austins_Ferry_3.jpg";
                     break;
                 default:
                     break;
