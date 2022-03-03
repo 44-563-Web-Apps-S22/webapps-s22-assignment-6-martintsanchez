@@ -21,6 +21,19 @@
     </form>
 
 
+    <form>
+        <input type="radio" id="rg1_times" name="operation" value="times" onclick="chooseOp()" checked>
+        <label for="rg1_times">*</label></br>
+
+        <input type="radio" id="rg1_divide" name="operation" onclick="chooseOp()" value="divide">
+        <label for="rg1_divide">/</label></br>
+
+        <input type="radio" id="rg1_exponent" name="operation" onclick="chooseOp()" value="exponent">
+        <label for="rg1_exponent">**</label></br>
+        <p id="resultOp"></p>
+
+    </form>
+
     <script>
 
         function tips() {
@@ -43,11 +56,36 @@
                 }
 
                 out.innerHTML = result
-                
+
             } else {
                 out.innerHTML = "Values were not confirmed"
             }
 
+
+        }
+
+        function chooseOp() {
+            console.log("Getting form values")
+            amount = document.getElementById("form1_amount").value
+            tip = document.getElementById("form1_tip_increase").value
+
+            times = document.getElementById("rg1_times").checked
+            divide = document.getElementById("rg1_divide").checked
+            exponent = document.getElementById("rg1_exponent").checked
+
+            resultOpValue = 0
+            if (times > 0) {
+                resultOpValue = amount * tip
+            }
+            else if (divide > 0) {
+                resultOpValue = amount / tip
+            }
+            else if (exponent > 0) {
+                resultOpValue = Math.pow(amount, tip)
+            }
+
+        resultOpOut = document.getElementById("resultOp")
+        resultOpOut.innerHTML = "Tip after operation: " + resultOpValue
 
         }
     </script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Check boxes</title>
+<body>
+
+<h2>Martin Sanchez orders a computer</h2>
+
+<form>
+    <input type="checkbox" id="Extra memory" name="topping1"
+    value="extra" checked>
+    <label for="Extra memory">I want cheese</label></br>
+
+    <input type="checkbox" id="Mouse" name="topping2"
+    value="mouse">
+    <label for="Mouse">I want olives</label></br>
+
+    <input type="checkbox" id="Cell service" name="topping3"
+    value="cell" checked>
+    <label for="Cell service">I want onions</label></br>
+    
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+
+    <p id="result"></p>
+
+    </form>
+
+
+<script>
+var my_computer = {}
+
+function orderComputer() {
+
+    console.log("my_computer: ", my_computer);
+
+    if(document.getElementById("extra").value != "") {
+        return true;
+      } else {
+        return false;
+      }
+      
+      if(document.getElementById("mouse").value != "") {
+        return true;
+      } else {
+        return false;
+      }
+
+      if(document.getElementById("cell").value != "") {
+        return true;
+      } else {
+        return false;
+      }
+
+
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+</script>
+
+
+<!-- <p id="result">This text will be replaced </p> -->
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
