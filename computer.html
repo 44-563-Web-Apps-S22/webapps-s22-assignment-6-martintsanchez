@@ -25,6 +25,19 @@
     </form>
 
 
+    <form>
+        <label for="form1_age">Enter a property name</label>
+        <input type ="text" id="form1_age" name="property" min=10 max=50 step=2 value="engraved"> <br>
+    
+        <label for="form1_nick">Enter a value</label>
+        <input type ="text" id="form1_nick" name="form1_nick" autofocus > <br>
+    
+        <input type="button" onclick="updateComputer()" value="Update the computer">
+    </form>
+
+
+
+
 <script>
 var my_computer = {}
 
@@ -59,6 +72,23 @@ function orderComputer() {
     }
 }
 
+function updateComputer(){
+
+    console.log("Getting form values")
+            property = document.getElementById("form1_amount").value
+            value = document.getElementById("form1_tip_increase").value
+            confirmed = confirm("Are these the values? "+property+" and "+value)
+
+
+            my_computer["property"] = "value"
+            
+            my_computer = document.getElementById("result")
+            if(confirmed){
+                my_computer.innerHTML = "Values were confirmed"
+            } else {
+                my_computer.innerHTML = "Values were not confirmed"
+            }
+}
 </script>
 
 
